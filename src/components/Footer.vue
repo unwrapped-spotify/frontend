@@ -17,7 +17,7 @@
                     Buy us a coffee!
                 </v-card-text>
             </v-col>
-            <v-col>
+            <v-col cols = 3>
                 <v-card-text class="mx-4 white--text text-center">
                     Unwrapped Spotify
                 </v-card-text>
