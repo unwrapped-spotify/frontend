@@ -2,7 +2,7 @@
   <v-app :style="{background: $vuetify.theme.themes.dark.background}">
   <Header/>
     <v-main>
-      <Welcome/>
+      <component :is="Page" @page="changePage($event)"></component>"
     </v-main>
     <Footer/>
   </v-app>
@@ -10,6 +10,7 @@
 
 <script>
 import Welcome from './components/Welcome';
+import HelloWorld from './components/HelloWorld';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
@@ -19,10 +20,18 @@ export default {
   components: {
     Welcome,
     Footer,
-    Header
+    Header,
+    HelloWorld
+},
+  data () {
+    return{
+      Page: 'Welcome',
+    }
   },
-  data: () => ({
-    //
-  }),
+  methods: {
+    changePage(page) {
+      this.Page = page;
+    }
+  }
 };
 </script>
