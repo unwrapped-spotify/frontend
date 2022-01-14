@@ -67,7 +67,7 @@
 export default {
 methods: {
   changePage() {
-    this.$emit('page', 'HelloWorld');
+    this.$emit('page', 'CreateUser');
   },
 },
 }

@@ -10,9 +10,9 @@
 
 <script>
 import Welcome from './components/Welcome';
-import HelloWorld from './components/HelloWorld';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import CreateUser from './components/CreateUser';
 
 export default {
   name: 'App',
@@ -21,7 +21,7 @@ export default {
     Welcome,
     Footer,
     Header,
-    HelloWorld
+    CreateUser
 },
   data () {
     return{
