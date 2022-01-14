@@ -2,14 +2,14 @@
   <v-app :style="{background: $vuetify.theme.themes.dark.background}">
   <Header/>
     <v-main>
-      <HelloWorld/>
+      <Welcome/>
     </v-main>
     <Footer/>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Welcome from './components/Welcome';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
@@ -17,7 +17,7 @@ export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    Welcome,
     Footer,
     Header
   },
