@@ -1,6 +1,6 @@
 <template>
     <v-container fill-height fluid>
-        <v-row justify="center" class="text-center white--text" align-content="center" align="center">
+        <v-row justify="center" class="text-center white--text" align-content="center">
             <v-col cols = 2></v-col>
             <v-col justify="center">
                 <h1 class="display-2 font-weight-bold mb-3">
