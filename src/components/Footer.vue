@@ -2,6 +2,7 @@
     <v-footer
         :color="$vuetify.theme.themes.dark.accent"
         class="white--text"
+        fixed
     >
         <v-row>
             <v-col>
