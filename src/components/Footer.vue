@@ -1,6 +1,6 @@
 <template>
     <v-footer
-        color="#1D382F"
+        :color="$vuetify.theme.themes.dark.accent"
         class="white--text"
     >
         <v-row>

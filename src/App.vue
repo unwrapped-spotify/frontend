@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :style="{background: $vuetify.theme.themes.dark.background}">
     <v-app-bar
       app
       color="primary"
@@ -55,7 +55,6 @@ export default {
     HelloWorld,
     Footer
   },
-
   data: () => ({
     //
   }),
