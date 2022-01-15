@@ -2,7 +2,10 @@
   <v-app :style="{background: $vuetify.theme.themes.dark.background}">
   <Header/>
     <v-main>
-      <component :is="Page" @page="changePage($event)"></component>"
+      <component
+        :is="Page"
+        @page="changePage($event)"
+        @storageID="saveStorageID($event)"></component>"
     </v-main>
     <Footer/>
   </v-app>
@@ -31,6 +34,10 @@ export default {
   methods: {
     changePage(page) {
       this.Page = page;
+    },
+    saveStorageID(storageID) {
+      console.log(storageID);
+      this.storageID = storageID
     }
   }
 };

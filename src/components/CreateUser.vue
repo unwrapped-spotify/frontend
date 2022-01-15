@@ -51,7 +51,7 @@
             <v-btn
               rounded
               :color="$vuetify.theme.themes.dark.primary"
-              @click="changePage('Welcome')"
+              @click="createUser('Welcome')"
             >
               Submit
             </v-btn>
@@ -83,6 +83,20 @@
     methods: {
       changePage(page) {
         this.$emit("page", page);
+      },
+      createUser() {
+        if (this.email != "") {
+          this.axios
+            .get(
+              process.env.VUE_APP_BACKEND_URL +
+                "/api/v1/users/" +
+                this.email +
+                "/create"
+            )
+            .then(
+              response => this.$emit("storageID", response.data.storageID));
+          //this.changePage("Welcome");
+        }
       },
     },
   };
