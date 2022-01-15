@@ -41,7 +41,7 @@
         </v-col>
         <v-col cols="2"></v-col>
       </v-row>
-            <v-row
+      <v-row
         justify="center"
         class="text-center white--text"
         align-content="center"
@@ -49,26 +49,25 @@
         <v-col cols="2"></v-col>
         <v-col cols="8">
           <v-btn
-          rounded
-          :color="$vuetify.theme.themes.dark.primary"
-          @click="changePage()"
+            rounded
+            :color="$vuetify.theme.themes.dark.primary"
+            @click="changePage('CreateUser')"
           >
             Get started!
           </v-btn>
         </v-col>
         <v-col cols="2"></v-col>
       </v-row>
-
     </v-col>
   </v-container>
 </template>
 
 <script>
-export default {
-methods: {
-  changePage() {
-    this.$emit('page', 'CreateUser');
-  },
-},
-}
+  export default {
+    methods: {
+      changePage(page) {
+        this.$emit("page", page);
+      },
+    },
+  };
 </script>
