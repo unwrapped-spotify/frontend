@@ -18,12 +18,14 @@
             <v-row>
               <v-col cols="3" />
               <v-col cols="6">
-                <v-text-field
-                  dark
-                  v-model="email"
-                  label="Email"
-                  :rules="emailRules"
-                ></v-text-field>
+                <v-form ref="emailForm">
+                  <v-text-field
+                    dark
+                    v-model="email"
+                    label="Email"
+                    :rules="emailRules"
+                  ></v-text-field>
+                </v-form>
               </v-col>
               <v-col cols="3" />
             </v-row>
@@ -85,7 +87,7 @@
         this.$emit("page", page);
       },
       createUser() {
-        if (this.email != "") {
+        if (this.email != "" & this.$refs.emailForm.validate()) {
           this.axios
             .get(
               process.env.VUE_APP_BACKEND_URL +
@@ -93,8 +95,9 @@
                 this.email +
                 "/create"
             )
-            .then(
-              response => this.$emit("storageID", response.data.storageID));
+            .then((response) =>
+              this.$emit("storageID", response.data.storageID)
+            );
           //this.changePage("Welcome");
         }
       },
