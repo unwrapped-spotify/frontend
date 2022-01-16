@@ -53,7 +53,7 @@
             <v-btn
               rounded
               :color="$vuetify.theme.themes.dark.primary"
-              @click="createUser('Welcome')"
+              @click="createUser()"
             >
               Submit
             </v-btn>
@@ -97,8 +97,7 @@
             )
             .then((response) =>
               this.$emit("storageID", response.data.storageID)
-            );
-          //this.changePage("Welcome");
+            ).then(() => this.changePage("UploadData"));
         }
       },
     },
