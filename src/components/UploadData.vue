@@ -87,14 +87,15 @@
       uploadData() {
         let formData = new FormData();
 
-        formData.append("file", this.files[0]);
-        formData.append("file", this.files[1]);
+        for (let file in this.files) {
+          formData.append("file", this.files[file]);
+        }
         this.axios
           .post(
             process.env.VUE_APP_BACKEND_URL +
-              "/api/v1/streaming-history/" +
+              "/api/v1/report/" +
               this.storageID +
-              "/data",
+              "/create",
             formData,
             {
               headers: {
