@@ -5,8 +5,11 @@
       <component
         :is="Page"
         :storageID="storageID"
+        :buildID="buildID"
         @page="changePage($event)"
-        @storageID="saveStorageID($event)"></component>"
+        @storageID="saveStorageID($event)"
+        @buildID="saveBuildID($event)"
+      ></component>"
     </v-main>
     <Footer/>
   </v-app>
@@ -18,6 +21,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import CreateUser from './components/CreateUser';
 import UploadData from './components/UploadData';
+import DownloadReport from './components/DownloadReport';
 
 export default {
   name: 'App',
@@ -27,12 +31,14 @@ export default {
     Footer,
     Header,
     CreateUser,
-    UploadData
+    UploadData,
+    DownloadReport
 },
   data () {
     return{
       Page: 'Welcome',
-      storageID: ''
+      storageID: '',
+      buildID: ''
     }
   },
   methods: {
@@ -41,6 +47,10 @@ export default {
     },
     saveStorageID(storageID) {
       this.storageID = storageID
+    },
+    saveBuildID(buildID) {
+      console.log(buildID)
+      this.buildID = buildID
     }
   }
 };
