@@ -103,9 +103,8 @@
               },
             }
           )
-          .then(() => {
-            console.log("sent");
-          });
+          .then((response) => this.$emit("buildID", response.data.buildID))
+          .then(() => this.changePage("DownloadReport"));
         //console.log(this.storageID)
       },
     },
