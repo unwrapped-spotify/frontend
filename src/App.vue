@@ -49,7 +49,6 @@ export default {
       this.storageID = storageID
     },
     saveBuildID(buildID) {
-      console.log(buildID)
       this.buildID = buildID
     }
   }
