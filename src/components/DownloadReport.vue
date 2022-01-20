@@ -29,11 +29,8 @@
           )
           .then((response) => {
             this.status = response.data.status;
-            console.log(response.data.status);
-            console.log(response.data.url)
             if (response.data.status == "SUCCESS") {
-              console.log("Success")
-              // get download link
+              this.downloadLink = process.env.VUE_APP_BACKEND_URL + "/api/v1/report/" + this.storageID + "/download.html";
             } else {
               setTimeout(this.getStatus, 1000);
             }
