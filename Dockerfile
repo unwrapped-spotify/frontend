@@ -14,6 +14,6 @@ FROM nginx:stable-alpine as production-stage
 # Copy built files
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 # Expose port
-EXPOSE 80
+EXPOSE 8080
 # Run nginx
 CMD ["nginx", "-g", "daemon off;"]
