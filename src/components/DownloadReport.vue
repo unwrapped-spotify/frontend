@@ -56,7 +56,7 @@
                 process.env.VUE_APP_BACKEND_URL +
                 "/api/v1/report/" +
                 this.storageID +
-                "/download.html";
+                "/download.pdf";
             } else {
               if (response.data.status == "FAILED") {
                 this.status =
